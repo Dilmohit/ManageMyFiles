@@ -179,6 +179,8 @@ public class HomeFragment extends Fragment implements OnFileSelectedListener {
         return arrayList;
     }
 
+
+    // this function will display files
     private void displayFiles() {
 
         recyclerView = view.findViewById(R.id.recycler_recents);
