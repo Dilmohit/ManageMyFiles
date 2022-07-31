@@ -11,6 +11,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.diltech.managemyfiles.fragments.AboutFragment;
 import com.diltech.managemyfiles.fragments.CardFragment;
 import com.diltech.managemyfiles.fragments.HomeFragment;
 import com.diltech.managemyfiles.fragments.InternalFragment;
@@ -26,8 +27,6 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         setContentView(R.layout.activity_main);
 
         drawerLayout = findViewById(R.id.drawer_layout);
-
-
 
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -64,7 +63,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 break;
 
             case R.id.nav_about:
-                Toast.makeText(this, "About", Toast.LENGTH_SHORT).show();
+                AboutFragment aboutFragment = new AboutFragment();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, aboutFragment).addToBackStack(null).commit();
                 break;
         }
 
