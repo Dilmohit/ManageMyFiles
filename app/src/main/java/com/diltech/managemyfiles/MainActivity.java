@@ -7,6 +7,8 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
+import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.widget.Toast;
@@ -65,6 +67,15 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
             case R.id.nav_about:
                 AboutFragment aboutFragment = new AboutFragment();
                 getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, aboutFragment).addToBackStack(null).commit();
+                break;
+
+            case R.id.nav_privacypolicy:
+                Intent privacypolIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://github.com/Dilmohit/ManageMyFiles/blob/master/Privacy-Policy"));
+                startActivity(privacypolIntent);
+                break;
+
+            case R.id.nav_exit:
+                finish();
                 break;
         }
 
